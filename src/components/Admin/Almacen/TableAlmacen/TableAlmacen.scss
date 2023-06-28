@@ -1,0 +1,27 @@
+.table-almacen-admin {
+  td {
+    &.status {
+      .icon {
+        &.close {
+          color: red;
+        }
+        &.check {
+          color: green;
+        }
+      }
+    }
+    .ui.image {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    .ui.icon.input {
+      width: 60vh;
+    }
+  }
+}

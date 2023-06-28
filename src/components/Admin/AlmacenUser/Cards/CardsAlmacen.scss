@@ -1,0 +1,34 @@
+.cards-almacen {
+  .userAl {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    .card-al {
+      width: 280px !important;
+    }
+  }
+  .content {
+    display: contents;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+    width: 100%;
+    .ui.icon.input {
+      width: 60vh;
+    }
+  }
+
+  .buttons {
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .ui.image {
+    width: 300px !important;
+    height: 300px !important;
+  }
+}

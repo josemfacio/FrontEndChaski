@@ -1,0 +1,21 @@
+.cards-pedidos {
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  .content {
+    display: contents;
+  }
+  .ui.card {
+    align-items: center;
+    width: 18em !important;
+    height: 15em !important;
+    display: flex;
+    flex-direction: column;
+
+    .icon {
+      padding-top: 0.5em;
+      font-size: 10em;
+    }
+  }
+}

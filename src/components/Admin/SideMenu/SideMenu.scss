@@ -1,0 +1,38 @@
+.side-menu-admin {
+  .ui.menu.left {
+    width: 250px !important;
+    overflow: hidden;
+    padding-top: 4em;
+    z-index: 99 !important;
+    background-color: #f0d31b !important;
+    i.icon {
+      float: initial !important;
+      margin: 0 !important;
+      margin-right: 10px !important;
+      color: aliceblue;
+    }
+  }
+
+  .content {
+    position: absolute;
+    right: 0;
+    width: calc(100% - 250px);
+  }
+
+  @media (max-width: 768px) {
+    .ui.menu.left {
+      width: 100% !important;
+
+      &.visible {
+        display: block;
+        width: 0% !important;
+      }
+    }
+
+    .content {
+      position: static;
+      padding: 20px;
+      width: 100%;
+    }
+  }
+}

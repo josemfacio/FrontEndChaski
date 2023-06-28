@@ -1,0 +1,20 @@
+.carrito {
+  display: grid;
+  align-items: center;
+  justify-content: space-around;
+  .ui.image {
+    width: 90px;
+    height: 80px;
+  }
+  .ui.input {
+    width: 90px !important;
+    padding: 10px !important;
+  }
+  .ui.input.ot {
+    width: 200px !important;
+    padding: 10px !important;
+  }
+  .content.deta {
+    background-color: red !important;
+  }
+}

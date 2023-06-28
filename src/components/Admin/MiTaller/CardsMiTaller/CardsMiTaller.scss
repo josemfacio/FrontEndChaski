@@ -1,0 +1,43 @@
+.cards-almacen {
+  // padding-left: 1rem;
+  .user {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+  }
+  .card {
+    width: 260px !important;
+  }
+  .content {
+    display: contents;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    .ui.icon.input {
+      width: 60vh;
+    }
+  }
+
+  .buttons {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .ui.image {
+    width: 300px;
+    height: 300px;
+  }
+}
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  .ui.icon.input {
+    width: 60vh;
+  }
+}

@@ -1,0 +1,14 @@
+.content {
+  .ui.card {
+    width: 100vh;
+    .header {
+      display: flex !important;
+      justify-content: space-between !important;
+    }
+    .extra.content {
+      .ui.green.button.btn {
+        width: 100%;
+      }
+    }
+  }
+}
