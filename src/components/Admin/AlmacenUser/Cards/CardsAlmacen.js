@@ -14,7 +14,6 @@ export function CardsAlmacen(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [setSearchResults] = useState(almacen);
-
   const handleResultSelect = (e, result) => {
     setSearchValue(result.material);
     setIsLoading(true);
@@ -70,7 +69,7 @@ export function CardsAlmacen(props) {
           setActivePage={setActivePage}
         />
       </div>
-      {loading ? (
+      {!loading ? (
         <Loader active inline="centered">
           Cargando...
         </Loader>
@@ -98,12 +97,10 @@ export function CardsAlmacen(props) {
                       </Card.Description>
                       <Card.Content extra>
                         <div className="buttons"></div>
-                        {item.cantidad > 0 ? (
+                        {item.cantidad > 0 && (
                           <Button color="blue" onClick={() => addCart(item)}>
                             <Icon name="shopping cart" />
                           </Button>
-                        ) : (
-                          <Button color="orange">Solicitar</Button>
                         )}
                       </Card.Content>
                     </Card.Content>

@@ -40,7 +40,7 @@ function MenuLeft(props) {
               active={pathname === "/almacen" ? true : false}
             >
               <Icon name="columns" />
-              ALMACEN Admin
+              ALMACEN ADMIN
             </Menu.Item>
             <Menu.Item
               as={Link}
@@ -48,7 +48,7 @@ function MenuLeft(props) {
               active={pathname === "/almacenusers" ? true : false}
             >
               <Icon name="archive" />
-              AlMACEN Usuarios
+              ALMACEN USUARIOS
             </Menu.Item>
             <Menu.Item
               as={Link}
@@ -104,7 +104,7 @@ function MenuLeft(props) {
               active={pathname === "/" ? true : false}
             >
               <Icon name="shop" />
-              Pedidos
+              PEDIDOS
             </Menu.Item>
           </>
         ) : (
