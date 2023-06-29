@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form } from "semantic-ui-react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -8,14 +8,17 @@ import { useAuth } from "../../../hooks";
 import { loginApi } from "../../../api/user";
 export function LoginForm() {
   const { login } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: Yup.object(validationSchema()),
     onSubmit: async (formValue) => {
       try {
+        setIsLoading(true);
         const response = await loginApi(formValue);
         const { access } = response;
         login(access);
+        setIsLoading(false);
       } catch (error) {
         console.log(error);
         toast.error(error.message);
@@ -39,7 +42,13 @@ export function LoginForm() {
         onChange={formik.handleChange}
         error={formik.errors.password}
       />
-      <Button type="submit" content="Iniciar Sesión" primary fluid />
+      <Button
+        type="submit"
+        content="Iniciar Sesión"
+        primary
+        fluid
+        disabled={isLoading}
+      />
     </Form>
   );
 }
