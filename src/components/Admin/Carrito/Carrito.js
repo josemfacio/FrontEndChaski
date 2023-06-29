@@ -39,23 +39,43 @@ export function Carrito(props) {
     onSubmit: async (formValue) => {
       try {
         setBand(true);
-        const res = await addPedido(formValue);
-        for (const idProduct of idProductsCart) {
-          const updatedProduct = {
-            ...idProduct,
-            idPedido: res.id,
-          };
-          const res2 = await addInfoPedido(updatedProduct);
+        let canCreatePedido = true;
+
+        for await (const idProduct of idProductsCart) {
+          if (
+            idProduct.cant < idProduct.cantidad ||
+            idProduct.ot === undefined
+          ) {
+            canCreatePedido = false;
+            break;
+          }
         }
-        if (res) {
-          cleanProductCartApi();
-          toast.success("PEDIDO REALIZADO CON EXITO");
+
+        if (canCreatePedido) {
+          const res = await addPedido(formValue);
+
+          for (const idProduct of idProductsCart) {
+            if (idProduct.cant > idProduct.cantidad) {
+              const updatedProduct = {
+                ...idProduct,
+                idPedido: res.id,
+              };
+              const res2 = await addInfoPedido(updatedProduct);
+            }
+          }
+          if (res) {
+            cleanProductCartApi();
+            toast.success("PEDIDO REALIZADO CON ÉXITO");
+            onClose();
+          } else {
+            console.log(res);
+            toast.error(res.message);
+          }
         } else {
-          console.log(res);
-          toast.error(res[0]);
+          console.log(idProductsCart);
+          toast.error("ERROR EN EL PEDIDO");
         }
         setBand(false);
-        onClose();
       } catch (error) {
         console.log(error);
       }
@@ -83,7 +103,9 @@ export function Carrito(props) {
                       {product.descripcion.substr(0, 30)}
                     </Item.Header>
                     <Item.Meta>{product.material}</Item.Meta>
-                    <Item.Description>$ {product.coste}</Item.Description>
+                    <Item.Description>
+                      Cant: {product.cantidad}
+                    </Item.Description>
                     <ItemCarrito
                       index={index}
                       id={product.id}

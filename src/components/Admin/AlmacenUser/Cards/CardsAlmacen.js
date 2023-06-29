@@ -24,7 +24,7 @@ export function CardsAlmacen(props) {
   const [serch2, setSerch2] = useState(true);
 
   const addCart = (product) => {
-    const res = addProductCart(product.id);
+    const res = addProductCart(product.id, product.cantidad);
     if (res) {
       toast.success(`${product.descripcion} añadido al carrito`);
     } else {
@@ -111,7 +111,7 @@ export function CardsAlmacen(props) {
                         </Button>
                       ) : (
                         <Button
-                          color="blue"
+                          color="orange"
                           onClick={() => console.log("solicitar")}
                         >
                           <Icon name="shopping cart" />

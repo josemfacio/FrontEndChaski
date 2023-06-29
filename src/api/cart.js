@@ -5,15 +5,16 @@ export function getProductsCart() {
   return JSON.parse(response || "[]");
 }
 
-export function addProductCart(id) {
+export function addProductCart(id, canti) {
   const products = getProductsCart();
   const existingProduct = products.find((product) => product.id === id);
 
   if (!existingProduct) {
     products.push({
       id: id,
-      cantidad: 1,
-      ot: 0,
+      cantidad: null,
+      ot: null,
+      cant: canti,
     });
     localStorage.setItem(PRODUCT_CART, JSON.stringify(products));
     return true;
