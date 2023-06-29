@@ -105,8 +105,15 @@ export function CardsAlmacen(props) {
                     </Card.Description>
                     <Card.Content extra>
                       <div className="buttons"></div>
-                      {item.cantidad > 0 && (
+                      {item.cantidad > 0 ? (
                         <Button color="blue" onClick={() => addCart(item)}>
+                          <Icon name="shopping cart" />
+                        </Button>
+                      ) : (
+                        <Button
+                          color="blue"
+                          onClick={() => console.log("solicitar")}
+                        >
                           <Icon name="shopping cart" />
                         </Button>
                       )}
