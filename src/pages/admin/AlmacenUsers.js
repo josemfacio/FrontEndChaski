@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { HeaderPageUser, CardsAlmacen } from "../../components/Admin";
+import {
+  HeaderPageUser,
+  CardsAlmacen,
+  AddEditMrpForm,
+} from "../../components/Admin";
 import { Loader } from "semantic-ui-react";
 import { ModalBasic } from "../../components/Common";
 import { useAlmacen } from "../../hooks";
@@ -15,6 +19,17 @@ export function AlmacenUsers() {
   useEffect(() => {
     getSerchAlmacen(serch);
   }, [serch, refetch]);
+  const addSolicitud = (data) => {
+    setTitleModal("NUEVA SOLICITUD");
+    setContentModal(
+      <AddEditMrpForm
+        onClose={openCloseModal}
+        onRefetch={onRefetch}
+        data={data}
+      />
+    );
+    openCloseModal();
+  };
   return (
     <>
       <HeaderPageUser title="Almacen" />
@@ -25,7 +40,12 @@ export function AlmacenUsers() {
         children={contentModal}
       />
       {almacen && (
-        <CardsAlmacen almacen={almacen} setSerch={setSerch} loading={loading} />
+        <CardsAlmacen
+          almacen={almacen}
+          setSerch={setSerch}
+          loading={loading}
+          addSolicitud={addSolicitud}
+        />
       )}
     </>
   );

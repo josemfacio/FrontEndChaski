@@ -17,7 +17,7 @@ import "./CardsAlmacen.scss";
 import { addProductCart } from "../../../../api/cart";
 
 export function CardsAlmacen(props) {
-  const { almacen, setSerch, loading } = props;
+  const { almacen, setSerch, loading, addSolicitud } = props;
   const [activePage, setActivePage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -112,7 +112,7 @@ export function CardsAlmacen(props) {
                       ) : (
                         <Button
                           color="orange"
-                          onClick={() => console.log("solicitar")}
+                          onClick={() => addSolicitud(item)}
                         >
                           <Icon name="shopping cart" />
                         </Button>
