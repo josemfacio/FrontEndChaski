@@ -24,7 +24,10 @@ export function AlmacenUsers() {
         title={titleModal}
         children={contentModal}
       />
-      <CardsAlmacen almacen={almacen} setSerch={setSerch} loading={loading} />
+      {loading && <Loader active inline="centered" />}
+      {almacen && (
+        <CardsAlmacen almacen={almacen} setSerch={setSerch} loading={loading} />
+      )}
     </>
   );
 }

@@ -49,7 +49,7 @@ export function CardsAlmacen(props) {
   }, [searchValue]);
   if (!almacen) return null;
   const chunkedData = chunk(almacen, 100);
-  console.log(almacen);
+  console.log(isLoading);
   return (
     <>
       <div className="actions">
@@ -69,7 +69,7 @@ export function CardsAlmacen(props) {
           setActivePage={setActivePage}
         />
       </div>
-      {!loading ? (
+      {loading ? (
         <Loader active inline="centered">
           Cargando...
         </Loader>
