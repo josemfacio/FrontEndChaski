@@ -20,7 +20,7 @@ const routesAdmin = [
     component: HomeAdmin,
   },
   {
-    path: "/admin/users",
+    path: "/users",
     layout: AdminLayout,
     component: Usuarios,
   },
