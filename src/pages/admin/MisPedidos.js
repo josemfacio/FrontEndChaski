@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { MisPedidosTable, InfoMisPedidos } from "../../components/Admin";
+import {
+  MisPedidosTable,
+  InfoMisPedidos,
+  HeaderPage,
+} from "../../components/Admin";
 import { usePedidos, useAuth } from "../../hooks";
 import { ModalBasic } from "../../components/Common";
 import { Loader } from "semantic-ui-react";
@@ -28,6 +32,7 @@ export function MisPedidos() {
   };
   return (
     <>
+      <HeaderPage title="PEDIDOS" />
       {loading || !pedidos ? (
         <Loader active inline="centered" />
       ) : (

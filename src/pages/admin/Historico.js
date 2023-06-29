@@ -1,9 +1,10 @@
 import React from "react";
-import { PedidosCard } from "../../components/Admin";
+import { PedidosCard, HeaderPage } from "../../components/Admin";
 
 export function Historico() {
   return (
     <div>
+      <HeaderPage title="PEDIDOS" />
       <PedidosCard />
     </div>
   );

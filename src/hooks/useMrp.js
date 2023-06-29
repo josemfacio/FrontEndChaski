@@ -38,21 +38,9 @@ export function useMrp() {
       setError(error);
     }
   };
-  const editMrp = async (id, data) => {
-    try {
-      setLoading(true);
-      await editMrpApi(id, data, auth.token);
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      setError(error);
-    }
-  };
   return {
     addMrp,
-    editMrp,
     getMrp,
-    getSerchMrp,
     loading,
     mrp,
     error,

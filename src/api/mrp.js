@@ -14,7 +14,8 @@ export async function addMrpApi(data, token) {
   try {
     const formData = new FormData();
     formData.append("idProd", data.idProd);
-    formData.append("active", data.active);
+    formData.append("nombre", data.nombre);
+    formData.append("cantidad", data.cantidad);
     const url = `${BASE_API}/api/mrp/`;
     const params = {
       method: "POST",
@@ -25,7 +26,8 @@ export async function addMrpApi(data, token) {
     };
     const response = await fetch(url, params);
     const result = await response.json();
-    return result;
+    console.log(response);
+    // return result;
   } catch (error) {
     throw error;
   }

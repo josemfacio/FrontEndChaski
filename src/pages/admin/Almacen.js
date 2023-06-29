@@ -59,7 +59,7 @@ export function Almacen() {
   return (
     <>
       <HeaderPage
-        title="Almacen"
+        title="ALMACEN"
         btnTitle="Nuevo Producto"
         btnClick={addAlmacen}
         btnTitleTwo="Actualizar BD"

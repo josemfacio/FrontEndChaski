@@ -15,7 +15,7 @@ import _ from "lodash";
 import "./TableMrp.scss";
 
 export function TableMrp(props) {
-  const { mrp, editLimit, setSerch, onRefetch } = props;
+  const { mrp } = props;
   const [searchValue, setSearchValue] = useState("");
   const [activePage, setActivePage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
@@ -31,13 +31,7 @@ export function TableMrp(props) {
     setIsLoading(true);
     setIsLoading(false);
   };
-  useEffect(() => {
-    async function fetchData() {
-      setSerch(searchValue.toLowerCase());
-    }
-
-    fetchData();
-  }, [searchValue]);
+  console.log(mrp);
   return (
     <div>
       <div className="actions">
@@ -63,9 +57,8 @@ export function TableMrp(props) {
             <Table.HeaderCell>PRODUCTO</Table.HeaderCell>
             <Table.HeaderCell>CODIGO</Table.HeaderCell>
             <Table.HeaderCell>IMAGEN</Table.HeaderCell>
-            <Table.HeaderCell>ALMACEN</Table.HeaderCell>
             <Table.HeaderCell>CANTIDAD</Table.HeaderCell>
-            {/* <Table.HeaderCell>ACCIONES</Table.HeaderCell> */}
+            <Table.HeaderCell>COMENTARIO</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         {chunkedData !== null && chunkedData.length !== 0 ? (
@@ -81,11 +74,8 @@ export function TableMrp(props) {
                     <Image src={limi.almacen_data.image} />
                   )}
                 </Table.Cell>
-                <Table.Cell>{limi.almacen_data.almacen}</Table.Cell>
-                <Table.Cell>{limi.almacen_data.cantidad}</Table.Cell>
-                {/* <Table.Cell>
-                  <Actions limi={limi} editLimit={editLimit} />
-                </Table.Cell> */}
+                <Table.Cell>{limi.cantidad}</Table.Cell>
+                <Table.Cell>{limi.nombre}</Table.Cell>
               </Table.Row>
             </Table.Body>
           ))

@@ -10,7 +10,7 @@ import "./AddEditMrpForm.scss";
 
 export function AddEditMrpForm(props) {
   const { onClose, onRefetch, data } = props;
-  // const { addMrp, editMrp } = useMrp();
+  const { addMrp } = useMrp();
   const [serch, setSerch] = useState(true);
   const formik = useFormik({
     initialValues: initialValues(data),
@@ -18,13 +18,8 @@ export function AddEditMrpForm(props) {
     validateOnChange: false,
     onSubmit: async (formValue) => {
       try {
-        // await Promise.all(
-        //   Object.keys(reportInfo).map(async (repo) => {
-        //     await addMrp(reportInfo[repo]);
-        //   })
-        // );
-        console.log(formValue);
-        onRefetch();
+        await addMrp(formValue);
+        toast.success("PEDIDO REALIZADO CON ÉXITO");
         onClose();
       } catch (error) {
         console.log(error);
@@ -60,10 +55,10 @@ export function AddEditMrpForm(props) {
           onChange={formik.handleChange}
         />
       </Form.Input>
-      <Form.Input name="comentario" placeholder="Comentario">
+      <Form.Input name="nombre" placeholder="Comentario">
         <input
-          value={formik.values.comentario}
-          error={formik.errors.comentario}
+          value={formik.values.nombre}
+          error={formik.errors.nombre}
           onChange={formik.handleChange}
         />
       </Form.Input>
@@ -74,16 +69,16 @@ export function AddEditMrpForm(props) {
 
 function initialValues(data) {
   return {
-    id: data.id,
+    idProd: data.id,
     descripcion: data.descripcion,
     material: data.material,
     cantidad: null,
-    comentario: null,
+    nombre: null,
   };
 }
 function newValidationSchema() {
   return {
     cantidad: Yup.number().required(true),
-    comentario: Yup.string().required(true),
+    nombre: Yup.string().required(true),
   };
 }

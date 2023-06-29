@@ -80,7 +80,7 @@ function MenuLeft(props) {
               active={pathname === "/mrp" ? true : false}
             >
               <Icon name="briefcase" />
-              MRP
+              MATERIALES SOLICITADOS
             </Menu.Item>
             <Menu.Item
               as={Link}

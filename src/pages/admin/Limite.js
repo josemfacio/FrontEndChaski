@@ -47,7 +47,7 @@ export function Limite() {
   return (
     <>
       <HeaderPage
-        title="Limite"
+        title="LIMITE"
         btnTitle="NUEVO LIMITE"
         btnClick={addLimite}
         talle={taller}

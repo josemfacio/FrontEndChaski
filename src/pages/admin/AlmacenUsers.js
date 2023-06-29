@@ -32,7 +32,7 @@ export function AlmacenUsers() {
   };
   return (
     <>
-      <HeaderPageUser title="Almacen" />
+      <HeaderPageUser title="ALMACEN" />
       <ModalBasic
         show={showModal}
         onClose={openCloseModal}

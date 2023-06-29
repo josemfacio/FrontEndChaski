@@ -5,13 +5,11 @@ import { HeaderPage, AddEditMrpForm, TableMrp } from "../../components/Admin";
 import { ModalBasic } from "../../components/Common";
 import { useMrp } from "../../hooks";
 export function Mrp() {
-  const { addMrp, editMrp, getSerchMrp, mrp, loading, error, getMrp } =
-    useMrp();
+  const { addMrp, editMrp, getMrp, mrp, loading, error } = useMrp();
   const [showModal, setShowModal] = useState(false);
   const [titleModal, setTitleModal] = useState(null);
   const [refetch, setRefecht] = useState(false);
   const [contentModal, setContentModal] = useState(null);
-  const [serch, setSerch] = useState(null);
   const openCloseModal = () => setShowModal((prevState) => !prevState);
   const onRefetch = () => setRefecht((prevState) => !prevState);
 
@@ -34,15 +32,11 @@ export function Mrp() {
     openCloseModal();
   };
   useEffect(() => {
-    getSerchMrp(serch);
-  }, [refetch, serch]);
+    getMrp();
+  }, []);
   return (
     <>
-      <HeaderPage
-        title="MRP"
-        btnTitle="Nuevo Producto para MRP"
-        btnClick={addLimite}
-      />
+      <HeaderPage title="MATERIALES SOLICITADOS" />
       {loading ? <Loader active inline="centered" /> : ""}
       <ModalBasic
         show={showModal}
@@ -50,7 +44,7 @@ export function Mrp() {
         title={titleModal}
         children={contentModal}
       />
-      {mrp && <TableMrp mrp={mrp} setSerch={setSerch} />}
+      {mrp && <TableMrp mrp={mrp} />}
     </>
   );
 }
