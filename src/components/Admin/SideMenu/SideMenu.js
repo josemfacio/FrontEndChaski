@@ -36,72 +36,72 @@ function MenuLeft(props) {
           <>
             <Menu.Item
               as={Link}
-              to={"/admin/almacen"}
-              active={pathname === "/admin/almacen" ? true : false}
+              to={"/almacen"}
+              active={pathname === "/almacen" ? true : false}
             >
               <Icon name="columns" />
               ALMACEN Admin
             </Menu.Item>
             <Menu.Item
               as={Link}
-              to={"/admin/almacenusers"}
-              active={pathname === "/admin/almacenusers" ? true : false}
+              to={"/almacenusers"}
+              active={pathname === "/almacenusers" ? true : false}
             >
               <Icon name="archive" />
               AlMACEN Usuarios
             </Menu.Item>
             <Menu.Item
               as={Link}
-              to={"/admin/users"}
-              active={pathname === "/admin/users" ? true : false}
+              to={"/users"}
+              active={pathname === "/users" ? true : false}
             >
               <Icon name="users" />
               USUARIOS
             </Menu.Item>
             <Menu.Item
               as={Link}
-              to={"/admin/taller"}
-              active={pathname === "/admin/taller" ? true : false}
+              to={"/taller"}
+              active={pathname === "/taller" ? true : false}
             >
               <Icon name="address book outline" />
               TALLER
             </Menu.Item>
             <Menu.Item
               as={Link}
-              to={"/admin/limite"}
-              active={pathname === "/admin/limite" ? true : false}
+              to={"/limite"}
+              active={pathname === "/limite" ? true : false}
             >
               <Icon name="stop circle outline" />
               LIMITE
             </Menu.Item>
             <Menu.Item
               as={Link}
-              to={"/admin/mrp"}
-              active={pathname === "/admin/mrp" ? true : false}
+              to={"/mrp"}
+              active={pathname === "/mrp" ? true : false}
             >
               <Icon name="briefcase" />
               MRP
             </Menu.Item>
             <Menu.Item
               as={Link}
-              to={"/admin/muletos"}
-              active={pathname === "/admin/muletos" ? true : false}
+              to={"/muletos"}
+              active={pathname === "/muletos" ? true : false}
             >
               <Icon name="briefcase" />
               MULETOS
             </Menu.Item>
             <Menu.Item
               as={Link}
-              to={"/admin/herramientas"}
-              active={pathname === "/admin/herramietnass" ? true : false}
+              to={"/herramientas"}
+              active={pathname === "/herramietnass" ? true : false}
             >
               <Icon name="briefcase" />
               HERRAMIENTAS
             </Menu.Item>
             <Menu.Item
               as={Link}
-              to={"/admin/"}
-              active={pathname === "/admin/" ? true : false}
+              to={"/"}
+              active={pathname === "/" ? true : false}
             >
               <Icon name="shop" />
               Pedidos
@@ -111,24 +111,24 @@ function MenuLeft(props) {
           <>
             <Menu.Item
               as={Link}
-              to={"/admin/almacenusers"}
-              active={pathname === "/admin/almacenusers" ? true : false}
+              to={"/almacenusers"}
+              active={pathname === "/almacenusers" ? true : false}
             >
               <Icon name="users" />
               ALMACEN CENTRAL
             </Menu.Item>
             <Menu.Item
               as={Link}
-              to={"/admin/miTaller"}
-              active={pathname === "/admin/miTaller" ? true : false}
+              to={"/miTaller"}
+              active={pathname === "/miTaller" ? true : false}
             >
               <Icon name="briefcase" />
               MI TALLER
             </Menu.Item>
             <Menu.Item
               as={Link}
-              to={"/admin/muletos"}
-              active={pathname === "/admin/muletos" ? true : false}
+              to={"/muletos"}
+              active={pathname === "/muletos" ? true : false}
             >
               <Icon name="briefcase" />
               MULETOS
@@ -136,8 +136,8 @@ function MenuLeft(props) {
 
             <Menu.Item
               as={Link}
-              to={"/admin/herramientas"}
-              active={pathname === "/admin/herramietnass" ? true : false}
+              to={"/herramientas"}
+              active={pathname === "/herramietnass" ? true : false}
             >
               <Icon name="briefcase" />
               HERRAMIENTAS
@@ -148,8 +148,8 @@ function MenuLeft(props) {
             </Menu.Item>
             <Menu.Item
               as={Link}
-              to={"/admin/misPedidos"}
-              active={pathname === "/admin/misPedidos" ? true : false}
+              to={"/misPedidos"}
+              active={pathname === "/misPedidos" ? true : false}
             >
               <Icon name="shop" />
               Pedidos
