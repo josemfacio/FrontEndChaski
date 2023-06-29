@@ -38,8 +38,8 @@ export function TopMenu() {
           <Menu.Item
             onClick={logout}
             as={Link}
-            to={"/admin"}
-            active={pathname === "/admin"}
+            to={"/"}
+            active={pathname === "/"}
           >
             <Icon name="sign-out" />
           </Menu.Item>

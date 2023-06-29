@@ -15,7 +15,7 @@ import {
 } from "../pages/admin";
 const routesAdmin = [
   {
-    path: "/admin",
+    path: "/",
     layout: AdminLayout,
     component: HomeAdmin,
   },
@@ -25,52 +25,52 @@ const routesAdmin = [
     component: Usuarios,
   },
   {
-    path: "/admin/almacen",
+    path: "/almacen",
     layout: AdminLayout,
     component: Almacen,
   },
   {
-    path: "/admin/historico",
+    path: "/historico",
     layout: AdminLayout,
     component: Historico,
   },
   {
-    path: "/admin/almacenusers",
+    path: "/almacenusers",
     layout: AdminLayout,
     component: AlmacenUsers,
   },
   {
-    path: "/admin/taller",
+    path: "/taller",
     layout: AdminLayout,
     component: Taller,
   },
   {
-    path: "/admin/limite",
+    path: "/limite",
     layout: AdminLayout,
     component: Limite,
   },
   {
-    path: "/admin/miTaller",
+    path: "/miTaller",
     layout: AdminLayout,
     component: MiTaller,
   },
   {
-    path: "/admin/mrp",
+    path: "/mrp",
     layout: AdminLayout,
     component: Mrp,
   },
   {
-    path: "/admin/muletos",
+    path: "/muletos",
     layout: AdminLayout,
     component: Muletos,
   },
   {
-    path: "/admin/herramientas",
+    path: "/herramientas",
     layout: AdminLayout,
     component: Herramientas,
   },
   {
-    path: "/admin/misPedidos",
+    path: "/misPedidos",
     layout: AdminLayout,
     component: MisPedidos,
   },
