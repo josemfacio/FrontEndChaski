@@ -54,7 +54,7 @@ export function InfoPedidos(props) {
           type="submit"
           primary
           fluid
-          content={"ENTERGADO"}
+          content={"ENTREGADO"}
           loading={loading}
           disabled={loading}
           onClick={entrgado}

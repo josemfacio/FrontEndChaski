@@ -54,7 +54,7 @@ export function TableAlmacen(props) {
         <Search
           category
           onResultSelect={handleResultSelect}
-          onSearchChange={_.debounce(handleSearchChange, 1000, {
+          onSearchChange={_.debounce(handleSearchChange, 3000, {
             leading: true,
           })}
           loading={isLoading}

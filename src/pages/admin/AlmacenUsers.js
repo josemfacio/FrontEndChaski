@@ -24,7 +24,6 @@ export function AlmacenUsers() {
         title={titleModal}
         children={contentModal}
       />
-      {loading && <Loader active inline="centered" />}
       {almacen && (
         <CardsAlmacen almacen={almacen} setSerch={setSerch} loading={loading} />
       )}
