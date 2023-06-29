@@ -107,14 +107,14 @@ export function CardsAlmacen(props) {
                       <div className="buttons"></div>
                       {item.cantidad > 0 ? (
                         <Button color="blue" onClick={() => addCart(item)}>
-                          <Icon name="shopping cart" />
+                          COMPRAR <Icon name="shopping cart" />
                         </Button>
                       ) : (
                         <Button
                           color="orange"
                           onClick={() => addSolicitud(item)}
                         >
-                          <Icon name="shopping cart" />
+                          SOLICITAR
                         </Button>
                       )}
                     </Card.Content>
